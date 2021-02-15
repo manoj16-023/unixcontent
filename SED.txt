@@ -1,0 +1,30 @@
+sed
+:
+===
+
+sed 's/unix/linux/' sample.txt -->replace o ccurance
+
+sed 's/unix/linux/g' sample.txt --> replace all occurances
+				in a file
+
+sed '1d' sample.txt -- it will remove first line
+
+sed '/$d' sample.txt -- it will remove lastline
+
+sed '1,3d' sample.txt -- it will delete three lines
+
+sed '/^$/d' sample.txt -- it will remove the empty lines
+
+sed -n '1,3p' sample.txt --it will print first three lines
+
+
+sed -i '1d' samplex.txt --> it will delete the line
+                             from source file.
+
+mutliple sed conditions:
+========================
+
+sed -e 's/Unix/Linu/' -e 's/Learn/linux/' sample.txt
+
+
+p:stands for print

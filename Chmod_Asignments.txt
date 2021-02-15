@@ -1,0 +1,8 @@
+1. Give the execute permission for the user for a file temp.txt
+2. Give the execute permission for user, group and others for a 
+   file add.txt
+3. Remove the execute permission from user, give read permission to 
+   group and others for a file aa.txt
+4. Give execute permission for users for a.txt, kk.txt, nato.txt and 
+    myfile.txt using single command
+
