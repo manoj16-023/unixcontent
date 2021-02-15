@@ -1,0 +1,30 @@
+Using SED Commands
+
+1.Create a file “Employee.dat” with text as follows.
+
+James	76382	PACE	Chennai
+John	34228	GRIT	Hyderabad
+Peter	22321	GE	Bangalore
+Albert	32342	GRIT	Pune
+Mathew	23222	PACE	Mumbai
+Richard	23232	ACS	Pune
+
+a) Write a sed command to print only the lines starting at line 2 and 
+   ending with the letters “Pune”
+
+b) Write a sed command that will display the top 5 lines from the file
+
+c) Write a sed command that will substitute the word “Chennai” for "Pune" used 
+   in all instance of the word
+
+d) Write a sed command that will replace occurrence of the character e
+   with the string UNIX in all lines. (Use –e option)
+
+
+e) Write a sed command to delete blank lines
+
+f) Write a sed command to delete lines from 3 to 5
+
+          
+2: Create a new file “PACE.dat which has only the lines that contain the word             
+                        “PACE” from Employee.dat
