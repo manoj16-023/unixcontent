@@ -1,0 +1,16 @@
+AWK Assignments:
+================
+
+1. Consider the results are stored in following format:
+
+EmpID 	          Name 		Subject 	Marks(/50)
+E001		 Nilesh 	Unix 		30
+E002 		 Suresh 	DSA 		20
+
+Like these you have 10 records ( 5 of DSA and 5 of Unix)
+1)	Display First 5 records.
+2)	Display Employees who belongs to subject Unix
+3)	Display employee names that got less than 30 marks in DSA subject.
+4)	Display only even numbered records
+5)	Display Employee id of records whose name start with N.
+
