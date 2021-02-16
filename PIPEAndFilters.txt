@@ -1,0 +1,18 @@
+1)Create the following fixed record format files (with “|” delimiter between fields) with the structure given below, and populate them with relevant data use these files to solve following questions
+emp.lst: Empid(4),Name(18),Designation(9),Dept(10),Date of  Birth(8),Salary(5)
+dept.lst : Dept.Code(2),Name(10),Head of Dept’s id(4)
+desig.lst: Designation Abbr.(2), Name (9)
+1.	Find the record lengths of each file.
+2.	Display only the date of birth and salary of the last employee record.
+3.	Extract only employee names and designations. (Use column specifications). Save output as cfile1.
+4.	Extract Emp.id, dept, dob and salary. (Use field specifications). Save output as cfile2.
+5.	Fix the files cfile1 and cfile2 laterally, along with the delimiter.
+6.	Sort the emp.lst file in reverse order of Emp. Names.
+7.	Sort the emp.lst file on the salary field, and store the result in file srtf.
+8.	Sort the emp.lst file on designation followed by name.
+9.	Sort the emp.lst file on the year of birth.
+10.	Find out the various designations in the employee file. Eliminate duplicate listing of designations.
+11.	Find the non-repeated designation in the employee file.
+12.	Find the number of employees with various designations in the employee file.
+13.	Create a listing of the years in which employees were born in, along with number of employees born in that year.
+14.	Use nl command to create a code table for designations to include designation code (Start with dept. code 100, and subsequently 105, 110 …).
