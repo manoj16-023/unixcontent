@@ -1,0 +1,308 @@
+Awk Command in Unix Syntax and Usages :
+=======================================
+The Awk Command in unix is mainly used for data manipulation with using file and 
+generating the specified reports as well.
+
+The awk command programming language requires no compiling, 
+and allows the user to use variables, numeric functions, 
+string functions, and logical operators.
+
+The Awk Command in unix is just like a scripting language which is used for text processing.
+
+Syntax :
+
+awk ‘BEGIN {start_action} {action} END {stop_action}’ filename
+
+As i already told you that Awk is used like scripting language we have different sections in Awk.
+
+1-Begin-Section: 
+================
+The scripting will start here.
+
+Start_action :
+--------------
+Here user can use any command which will be the starting action.
+
+
+Action :
+--------
+Here user can use set of commands to perform text manipulation.
+
+Stop_action:
+------------
+Here user can use command which will end the script.
+
+
+Different Usages of Awk Command in Unix :
+--------------------------------------------
+The Awk command is useful in following situations :
+
+1.Scanning of the File Line by line.
+
+2.It is used to transform the data files and data manipulation in text files.
+
+3. Awk Command used to splits each input line into fields.
+
+4. Awk Command compares input line/fields to pattern.
+
+5. The main use of Awk command is to produce formatted reports.
+
+6. The Awk command is used to perform the arithmetic and logical operations with ease.
+
+7. The Awk command used to perform the conditional looping operations as well.
+
+Options of Awk Command :
+========================
+-F fs     : This option is used to specify a file separator.
+
+-f file   : This option is used to specify a file that contains awk script.
+
+-v var=value : This option is used to declare the variables.
+
+These are above different options of Awk command. 
+
+
+Different Examples of Awk Command in Unix :
+===========================================
+
+To check different examples let us create one file in unix using cat command.
+
+$cat > employees.txt
+
+Amit manager account 45000
+
+Rohit clerk account 25000
+
+Piyush manager sales 50000
+
+Rahul manager account 47000
+
+Sreenu peon sales 15000
+
+Bikesh clerk sales 23000
+
+Sreejit peon sales 13000
+
+Aniket director purchase 80000
+
+
+Example:
+=====
+TO display content from a file:
+
+sol:
+===
+
+$ awk 'print' employees.txt
+
+
+Example2:
+=========
+Pattern matching in AWk
+
+a) Search a name peon in employees.txt and print  it
+syntax:
+=====
+awk '/pattern/{}' filename
+
+sol:
+====
+awk '/peon/{print}' employees.txt
+
+
+Example 3:
+==========
+Spliting Lines into fields
+
+a) Print Field no 1 as well as field no3
+
+sol:
+====
+awk '{print $1,$3}' employees.txt
+
+
+Example 4:
+==========
+Printing Line number using NR variable  in Awk Command
+
+NR:- Nr command keeps a current count of the number of input records.
+
+sol:
+====
+
+awk '{print NR,$0}' employees.txt
+
+note:
+=====
+To print the number of lines with using AWK command user
+needs to use NR variable as well as $0
+
+As we need to display or check the line number of each and every line of the file
+we need to use $0 variable of Awk command
+
+
+Example5:
+=========
+Displaying  First Field and Last field using NF Variable
+
+NG:-
+
+NF command keeps a  count of the number of fields with in the current input record or file.
+THe NF commnad used to display lastField in the given file .
+
+If user wants a report which contains the first field as last field then NF command is use.
+
+
+Sol:
+---
+
+awk '{print $1,$NF}' employees.txt
+
+or lastField
+
+awk '{print $NF}' employees.txt
+
+
+Example:6:
+==========
+If user want to display specific lines using NR Command
+
+Display fourth line and Second Line from employees.txt
+
+sol:-
+====
+
+awk 'NR==2,NR==4{print NR,$0}' employees.txt
+
+note:
+====
+
+the above command will display line between  2 to 4.
+
+
+Example 7:
+=======
+
+if you want to print seperator and print
+first line with line number
+
+sol:
+====
+
+awk '{print NR"|"$1}' employees.txt
+
+
+Example 8:
+==========
+To check and print the longest line(number of characaters in the file)
+
+
+sol:
+====
+
+awk '{
+       if(length($0)>max_len
+        max_len=length($0)
+        END} {print max_len} ' employees.txt
+
+
+Example 9:
+=========
+Find the cube of the give number (1 to 3)
+
+sol:
+====
+awk 'BEGIN{   
+                for(i=1;i<3,i++) 
+                print "cube of ",i,"is ",i*i*i
+
+      }'
+
+
+Example 10:
+===========
+Awk script file:- wrriting all the awk commands in file and save the file .sh extension
+
+to run the scritp file which contain only awk commands.
+========================================================
+
+awk -f specifythescriptfilename  specifythefilenametoprocess 
+
+
+a)create a script file named as awkscript.sh and specify the sequence of awk command
+
+
+ awkscript.sh
+ ===============
+
+ {print}
+
+
+ BEGIN{for(i=1;i<3,i++) print "cube of ",i,"is ",i*i*i}'
+
+
+ #it will print lines between 2 to 4
+
+ NR==2,NR==4{print NR,$0}
+
+
+to run:
+======
+
+awk -f awkscript.sh  employees.txt
+
+Exercise:
+=========
+
+creat a file named as student.txt
+sid,sname,marks
+
+101,smith,100
+102,martin,200
+104,john,400
+103,mahesh,'500
+105,raju,600
+
+
+a) write awk command to print sname,marks
+
+
+b)write awk command to perform sum of all marks.
+
+awk -F"," '{sum=sum+$3}END {print sum}' student.txt
+
+
+c) write awk command to get  the lines between 2 to 4 and store into afile awkOut.txt
+   using -
+
+ 102-martin-300
+
+  awk 'BEGIN {FS=",";OFS="-"} NR==2,NR==4{print NR,$1,$2,$3}' student.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
