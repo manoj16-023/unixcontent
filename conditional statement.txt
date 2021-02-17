@@ -1,0 +1,393 @@
+syntax:
+=======
+
+if test conditon; then
+
+statement
+ 
+fi
+
+or 
+
+
+if [ condition ]; then
+
+statement
+
+fi
+
+1) create a scriptfile named ex4.sh 
+a) read two input values a,b and compare which value
+  greater using if else
+
+=
+2)write a shell script  program to compare 
+  three variables using if-elif-else
+
+
+3)Write a Shell Script to check if a number is odd, even or zero
+
+4) write a shell script to check entered  two strings are equal.
+
+
+syntax:
+=======
+case expression in
+
+  pattern 1) #block clode ;;
+
+  pattern 2) #block clode ;;
+pattern 3) #block clode ;;
+pattern 4) #block clode ;;
+pattern 5) #block clode ;;
+
+esac
+
+Example:
+=========
+
+write a shell script to take integer value from user and print some
+messages based on  a match
+
+2) write a shell script to take two integers and string from user and print
+if user passed add it should sum of two numbers,sub,multi,division usin case in
+
+
+
+loop:
+=====
+syntax:
+========
+
+while [ conditio]
+do
+
+ #body of the while loop
+
+done
+
+
+1) write a shell script program to print from  1 to 5 using while loop
+
+sol:
+=====
+
+ex8.sh
+======
+
+#initialize the varible
+
+i=1
+
+while [ $i -le 5 ]
+do
+
+echo $i
+
+i=`expr $i + 1`
+
+done
+
+
+
+
+for statement
+=============
+
+for variable in list
+do
+   #echo..statements
+
+
+done
+
+
+1) write a shell script program to print from  1 to 5 using while loop
+ using for
+
+
+for i in 1 2 3 4 5
+do
+
+echo $i
+
+done
+
+note:
+=====
+we use brace expansion {m..n}
+to generate string in shell script
+
+ex:
+===
+{1..5} -->it will print  1 2 3 4 5
+
+{a..f} -> it will give a b c d e f 
+
+{-5..1} --> it will give -5 -4 -3 -2 -1 0 1
+
+
+2)write a shell to print  from  1 to 10 using brace expansion with for loop
+
+sol:
+===
+for i in {1..10}
+do
+
+echo $i
+
+done
+
+
+syntax for loop (c -language)
+=============================
+for((initializtaion;condition;increment/decrement))
+do
+
+#echo statements
+
+done
+
+
+3)write a shell to print  from  1 to 10 using  for loop
+
+
+sol:
+===
+
+for((i=1;i<=10;i++))
+do
+
+echo $i
+
+done
+
+
+function:
+========
+
+A function is a block statements or code for specific task
+
+
+syntax:
+========
+functionName(){
+
+#code or commands
+
+}
+
+
+1)write a shell script program to print "Hello world" using function.
+sol:
+----
+
+function greetings(){
+ 
+echo "Helloworld"
+ 
+}
+ 
+#calling a function
+ 
+greetings
+
+
+Passing Arguments to a function
+===============================
+
+we can also pass arguments to a function in shell script
+and access them using  variables like $1,$2,$3...
+where $1 points at the first argument ,$2 points at the
+second argument and so on...
+
+
+
+2)write a shellscript to create a function that accepts
+ username and displays a greeting message
+ hello raju.
+sol:
+====
+#!/bin/sh
+ 
+#function with parameter
+ 
+greetings(){
+ 
+echo "Hello $1"
+ 
+}
+ 
+ 
+#calling a function with argument
+greetings "dinesh"
+ 
+
+
+3)write a shellscript to create a function that accepts
+ username from input read and displays a greeting message
+ hello raju
+
+sol:
+=====
+
+#!/bin/sh
+ 
+#read the username
+ 
+echo "enter the username"
+read un
+ 
+greetings(){
+ 
+echo "hello $1"
+ 
+}
+ 
+#calling a function
+greetings "$un"
+ 
+
+Array:
+======
+1) delcare and initialize an array
+
+arr=(1 4 9 10)
+
+echo ${arr[2]}
+
+
+2)we can read /assign value to array using the 
+execution time using the read shell command
+
+syntax:
+=======
+
+read -a
+
+
+Note:
+=====
+we need to provide the array elements separated by space.
+
+3) display the elements except first one
+
+echo ${arrayName[@]:1}
+
+
+4) display the elements in  a range
+
+echo ${arrayname[@]:startrange:no of elements})
+
+
+5)count the length of an array using #
+
+echo ${#arrayname[@]
+
+
+6) to delete an element from any array using unset
+
+unset arrayName[index]
+
+
+File related operators:
+=======================
+
+Example:
+=======
+write a shell script to check if a file exist ?
+
+
+Exercise
+
+1) Write a shell script to display the file name and its contents of all the files that is there in the 
+       current directory.
+
+2) Write a shell script, which will take a file name as argument and check whether the file exists and 
+    display its access permissions for user.
+
+3) Pass three numbers as command line arguments and display the largest number in the given three numbers.
+
+4) Write a shell script which will accept a pattern and a file name. The pattern will be searched in the file provided. 
+    Display appropriate messages and perform necessary validations on file.
+
+5) To create a menu program for a) creating a file, b) Creating a  directory, c) copying a file, 
+                    d) moving a file. (use functions)
+a.If the file exists already give the appropriate message
+b.If the dir exists already give the appropriate error message
+c.Source file should exist if not give a message, It should have read permission if not another message,
+  Destination file either there or not, if not there then create it and copy it. 
+  If there, then ask whether to overwrite or not, if yes then overwrite it or else give a message 
+  file exists already and not overwritten.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
