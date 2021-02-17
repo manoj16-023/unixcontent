@@ -1,0 +1,20 @@
+
+1) Write a shell script to display the file name and its contents of all the files that is there in the 
+       current directory.
+
+2) Write a shell script, which will take a file name as argument and check whether the file exists and 
+    display its access permissions for user.
+
+3) Pass three numbers as command line arguments and display the largest number in the given three numbers.
+
+4) Write a shell script which will accept a pattern and a file name. The pattern will be searched in the file provided. 
+    Display appropriate messages and perform necessary validations on file.
+
+5) To create a menu program for a) creating a file, b) Creating a  directory, c) copying a file, 
+                    d) moving a file. (use functions)
+a.If the file exists already give the appropriate message
+b.If the dir exists already give the appropriate error message
+c.Source file should exist if not give a message, It should have read permission if not another message,
+  Destination file either there or not, if not there then create it and copy it. 
+  If there, then ask whether to overwrite or not, if yes then overwrite it or else give a message 
+  file exists already and not overwritten.
